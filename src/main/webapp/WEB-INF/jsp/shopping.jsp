@@ -6,6 +6,9 @@
 <html>
 <head>
     <title>Shopping</title>
+    <style>
+        td {padding: 10px 10px 3px 0px;}
+    </style>
 </head>
 <body>
     <h3>My Shopping List</h3>
@@ -14,7 +17,7 @@
         <table>
             <tr>
                 <input type="submit" value="Add" style="margin-right: 10px; padding: 0px 15px">
-                <input type="text" name="shoppingItem">
+                <input type="text" name="name" minlength="2" required>
             </tr>
         </table>
     </form>
@@ -22,8 +25,10 @@
     <table>
         <c:forEach items="${shoppingitems}" var="shoppingitem">
             <tr>
+                <td>
+                    <a href="/delete-shoppingitem?id=${shoppingitem.id}"><input type="submit" value="Delete"/></a>
+                </td>
                 <td>${shoppingitem.name}</td>
-                <td><a href="/delete-shoppingitem?id=${shoppingitem.id}">Delete</a></td>
             </tr>
         </c:forEach>
     </table>

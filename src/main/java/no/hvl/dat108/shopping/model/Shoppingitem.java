@@ -1,5 +1,7 @@
 package no.hvl.dat108.shopping.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 public class Shoppingitem {

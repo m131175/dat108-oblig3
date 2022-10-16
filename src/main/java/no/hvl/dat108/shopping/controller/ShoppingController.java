@@ -6,6 +6,7 @@ import no.hvl.dat108.shopping.util.LoginUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,13 +27,13 @@ public class ShoppingController {
     ShoppingService shoppingService;
 
     @RequestMapping(value = "/shopping", method = RequestMethod.GET)
-    public String showShopping(HttpSession session, RedirectAttributes ra) {
+    public String showShopping(ModelMap model, HttpSession session, RedirectAttributes ra) {
 
         if (!LoginUtil.isUserLoggedIn(session)) {
             ra.addFlashAttribute("redirectMessage", REQUIRES_LOGIN_MESSAGE);
             return "redirect:" + LOGIN_URL;
         }
-        ra.addFlashAttribute("shoppingitems", shoppingService.retrieveShoppingitems());
+        model.put("shoppingitems", shoppingService.retrieveShoppingitems());
         return "shopping";
     }
 
