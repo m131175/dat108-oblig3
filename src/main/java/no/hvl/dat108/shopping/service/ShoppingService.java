@@ -26,12 +26,5 @@ public class ShoppingService {
     public void deleteShoppingitem(int id) {
         items.removeIf(item -> item.getId() == id);
     }
-
-    public Shoppingitem getItem(int id) {
-        Shoppingitem itemToGet = null;
-        for(Shoppingitem item : items) {
-            if (item.getId() == id) itemToGet = item; break;
-        }
-        return itemToGet;
-    }
+    
 }

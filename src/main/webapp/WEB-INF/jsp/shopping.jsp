@@ -22,7 +22,7 @@
         <c:forEach items="${shoppingitems}" var="shoppingitem">
             <tr>
                 <td>${shoppingitem}</td>
-                <td><a href="delete-shoppingitem?id=${shoppingitem.id}">Delete</a></td>
+                <td><a href="/delete-shoppingitem?id=${shoppingitem.id}">Delete</a></td>
             </tr>
         </c:forEach>
     </table>

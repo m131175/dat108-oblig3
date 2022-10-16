@@ -49,7 +49,8 @@ public class ShoppingController {
     }
 
     @RequestMapping(value = "/delete-shoppingitem", method = RequestMethod.GET)
-    public String deleteShoppingitem(@RequestParam int id, HttpSession session, RedirectAttributes ra) {
+    public String deleteShoppingitem(@RequestParam int id,
+                                     HttpSession session, RedirectAttributes ra) {
 
         if (!LoginUtil.isUserLoggedIn(session)) {
             ra.addFlashAttribute("redirectMessage", REQUIRES_LOGIN_MESSAGE);
