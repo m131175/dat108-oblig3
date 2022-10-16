@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,7 @@
     <table>
         <c:forEach items="${shoppingitems}" var="shoppingitem">
             <tr>
-                <td>${shoppingitem}</td>
+                <td>${shoppingitem.name}</td>
                 <td><a href="/delete-shoppingitem?id=${shoppingitem.id}">Delete</a></td>
             </tr>
         </c:forEach>

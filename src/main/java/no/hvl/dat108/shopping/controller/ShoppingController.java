@@ -6,6 +6,7 @@ import no.hvl.dat108.shopping.util.LoginUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,7 +36,7 @@ public class ShoppingController {
         return "shopping";
     }
 
-    @RequestMapping(value = "/add-shoppingitem", method = RequestMethod.POST)
+    @RequestMapping(value = "/shopping", method = RequestMethod.POST)
     public String addShoppingitem(@Valid Shoppingitem item,
                                   HttpSession session, RedirectAttributes ra) {
 
