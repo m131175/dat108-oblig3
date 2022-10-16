@@ -20,11 +20,13 @@ public class ShoppingService {
     public List<Shoppingitem> retrieveShoppingitems() { return items; }
 
     public void addShoppingitem(String name) {
-        items.add(new Shoppingitem(items.size() + 1, name));
+        // Was considering the use of UUID for the Shoppingitem.id,
+        // but couldn't make the delete functionality work with it.
+        items.add(new Shoppingitem((int)Math.floor(Math.random()*10000000), name));
     }
 
     public void deleteShoppingitem(int id) {
         items.removeIf(item -> item.getId() == id);
     }
-    
+
 }
