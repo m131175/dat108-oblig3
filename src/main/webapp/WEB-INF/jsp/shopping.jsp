@@ -28,8 +28,8 @@
                 <td>
                     <a href="/delete-shoppingitem?id=${shoppingitem.id}"><input type="submit" value="Delete"/></a>
                 </td>
-                <td>${shoppingitem.name}</td>
-            </tr>
+                <td><c:out escapeXml="true" value="${shoppingitem.name}"/></td>
+            </tr>sh
         </c:forEach>
     </table>
 
