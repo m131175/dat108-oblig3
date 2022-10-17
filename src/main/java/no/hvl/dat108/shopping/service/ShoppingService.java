@@ -22,7 +22,7 @@ public class ShoppingService {
     public void addShoppingitem(String name) {
         // Was considering the use of UUID for the Shoppingitem.id,
         // but couldn't make the delete functionality work with it.
-        items.add(new Shoppingitem((int)Math.floor(Math.random()*10000000), name));
+        items.add(new Shoppingitem((int)Math.floor(Math.random()*99999999), name));
     }
 
     public void deleteShoppingitem(int id) {
